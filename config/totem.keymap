@@ -11,6 +11,17 @@
 // Migrated from Crab Broom (34-key) to Totem (38-key) layout
 //
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+// Key position layout (Totem 38-key):
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃     0     ┃     1     ┃     2     ┃     3     ┃     4     ┃   ┃     5     ┃     6     ┃     7     ┃     8     ┃     9     ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃    10     ┃    11     ┃    12     ┃    13     ┃    14     ┃   ┃    15     ┃    16     ┃    17     ┃    18     ┃    19     ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃    20     ┃    21     ┃    22     ┃    23     ┃    24     ┃    25     ┃   ┃    26     ┃    27     ┃    28     ┃    29     ┃    30     ┃    31     ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃    32     ┃    33     ┃    34     ┃   ┃    35     ┃    36     ┃    37     ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
        
 
 #include <behaviors.dtsi>
@@ -25,6 +36,7 @@
 #define SYS  3  // System controls (bluetooth, reset, etc.)
 #define GAME 4  // Gaming layer without home row mods
 #define GSYM 5  // Gaming symbols layer
+#define FN   6  // Function keys layer (F1-F12)
 
 // Home row mods macros
 // Left hand: Shift/Alt/Ctrl/Gui on A/S/D/F
@@ -80,16 +92,6 @@
             compatible = "zmk,combos";
             // Toggle gaming layer by pressing ALL 6 thumb keys simultaneously
             // This prevents accidental gaming mode activation during normal typing
-            // Key position layout (Totem 38-key):
-            //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃     0     ┃     1     ┃     2     ┃     3     ┃     4     ┃   ┃     5     ┃     6     ┃     7     ┃     8     ┃     9     ┃
-            //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃    10     ┃    11     ┃    12     ┃    13     ┃    14     ┃   ┃    15     ┃    16     ┃    17     ┃    18     ┃    19     ┃
-            // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃    20     ┃    21     ┃    22     ┃    23     ┃    24     ┃    25     ┃   ┃    26     ┃    27     ┃    28     ┃    29     ┃    30     ┃    31     ┃
-            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-            //                                     ┃    32     ┃    33     ┃    34     ┃   ┃    35     ┃    36     ┃    37     ┃
-            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
             combo_gaming {
                 timeout-ms = <200>;
                 key-positions = <32 33 34 35 36 37>;  // All thumb keys: DEL BSPC ENTER SPACE TAB ESC
@@ -133,7 +135,7 @@ label= "Base"                              ;
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
               HRML(A,         S,          D,          F)        &kp G           &kp H     HRMR(J,         K,          L,        SQT) 
     &kp ESC     &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp BSLH
-                                        &kp DEL     &kp BSPC    &lt SYM ENTER   &lt NUM SPACE  &kp TAB   &kp ESC
+                                        &kp DEL     &kp BSPC    &lt SYM ENTER   &lt NUM SPACE  &lt FN TAB   &kp ESC
                         >;
                 };
 
@@ -222,28 +224,28 @@ label= "Sys"                               ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "Game1"                             ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-// Gaming layer optimized for FPS/MMO games
-// - No home row mods to prevent accidental modifier activation
-// - WASD in standard position, Q moved for easy weapon switching  
-// - Numbers on right side for quick item/ability access
-// - F key easily accessible for interaction
-// - Tab for scoreboard/inventory, Space for jump, Enter for chat
+// Gaming layer with identical letter layout to base layer
+// - All letter keys in same positions as base layer for consistency
+// - No home row mods to prevent accidental activation during gameplay
+// - Shift keys on positions 20 and 31 for easy access with pinkies
+// - Thumb layer toggles: NUM and GSYM for numbers/symbols access
+// - Direct Ctrl (pos 32) and Alt (pos 37) on thumbs for quick modifiers
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃     Q     ┃     E     ┃     W     ┃     R     ┃     T     ┃   ┃     Y     ┃     1     ┃     2     ┃     3     ┃     P     ┃
+//             ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃     Y     ┃     U     ┃     I     ┃     O     ┃     P     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     F     ┃     A     ┃     S     ┃     D     ┃     G     ┃   ┃     H     ┃     4     ┃     5     ┃     6     ┃ ' "       ┃
+//             ┃     A     ┃     S     ┃     D     ┃     F     ┃     G     ┃   ┃     H     ┃     J     ┃     K     ┃     L     ┃     '     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃    TAB    ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     7     ┃     8     ┃     9     ┃     0     ┃   ENTER   ┃
+// ┃   SHIFT   ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃   SHIFT   ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃   BSPC    ┃  GSYM     ┃   SPC     ┃   ┃   ENTER   ┃           ┃    TAB    ┃
+//                                     ┃   CTRL    ┃   BSPC    ┃GSYM+ENTER ┃   ┃NUM+SPACE  ┃  FN+TAB   ┃    ALT    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp Q      &ht LCTRL E  &kp W       &ht LALT R  &kp T           &kp Y       &kp N1      &kp N2      &kp N3      &kp P
-                &kp F       &kp A       &kp S       &kp D       &kp G           &kp H       &kp N4      &kp N5      &kp N6      &kp SQT
-    &kp TAB     &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp N7      &kp N8      &kp N9      &kp N0      &kp RET        
-                                        &kp BSPC   &lt GSYM ENTER &kp SPACE      &kp RET     &trans      &kp TAB    
+                &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
+                &kp A       &kp S       &kp D       &kp F       &kp G           &kp H       &kp J       &kp K       &kp L       &kp SQT
+    &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT        
+                                        &kp LCTRL   &kp BSPC    &lt GSYM ENTER   &lt NUM SPACE  &lt FN TAB   &kp LALT    
                         >;
                 };
 
@@ -264,7 +266,7 @@ label= "Game2"                             ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃           ┃           ┃   ┃    ESC    ┃           ┃           ┃
+//                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
@@ -272,7 +274,35 @@ label= "Game2"                             ;
                 &trans      &trans      &trans      &trans      &trans          &kp Y       &kp U       &kp I       &kp O       &kp P
                 &trans      &trans      &trans      &trans      &trans          &kp H     HRMR(J,         K,          L,        SQT)
     &trans      &trans      &trans      &trans      &trans      &trans          &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &trans         
-                                        &trans      &trans      &trans          &kp ESC     &trans      &trans      
+                                        &trans      &trans      &trans          &trans      &trans      &trans      
+                        >;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+                fn_layer {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+label= "Fn"                               ;
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+// Function keys layer - accessed via TAB key hold (position 36)
+// F1-F9 arranged in same positions as NUM layer numbers 1-9
+// F10-F12 in the rightmost column of LEFT half for easy access
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃           ┃    F1     ┃    F2     ┃    F3     ┃    F10    ┃   ┃           ┃           ┃           ┃           ┃           ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃           ┃    F4     ┃    F5     ┃    F6     ┃    F11    ┃   ┃           ┃           ┃           ┃           ┃           ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃           ┃           ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+ bindings = <
+// ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
+
+                &trans      &kp F1      &kp F2      &kp F3      &kp F10         &trans      &trans      &trans      &trans      &trans
+                &trans      &kp F4      &kp F5      &kp F6      &kp F11         &trans      &trans      &trans      &trans      &trans
+    &trans      &trans      &kp F7      &kp F8      &kp F9      &kp F12         &trans      &trans      &trans      &trans      &trans      &trans      
+                                        &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
         };
