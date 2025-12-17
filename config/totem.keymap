@@ -113,7 +113,7 @@ label= "Base"                              ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃    ESC    ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     \     ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃   DEL     ┃    TAB    ┃    SPC    ┃   ┃   ENTER   ┃   ESC     ┃   BSPC    ┃
+//                                     ┃    DEL    ┃   BSPC    ┃NUM+SPACE  ┃   ┃SYM+ENTER  ┃    TAB    ┃    ESC    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
@@ -121,7 +121,7 @@ label= "Base"                              ;
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
               HRML(A,         S,          D,          F)        &kp G           &kp H     HRMR(J,         K,          L,        SQT) 
     &kp ESC     &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp BSLH
-                                        &kp DEL     &lt NUM TAB  &kp SPACE      &lt SYM ENTER  &kp ESC   &kp BSPC
+                                        &kp DEL     &kp BSPC    &lt NUM SPACE   &lt SYM ENTER  &kp TAB   &kp ESC
                         >;
                 };
 
@@ -137,7 +137,7 @@ label= "Num"                               ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃   DELETE  ┃     4     ┃     5     ┃     6     ┃           ┃   ┃   LEFT    ┃   DOWN    ┃    UP     ┃   RIGHT   ┃     ;     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃  CAPS WRD ┃     7     ┃     8     ┃     9     ┃     0     ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
+// ┃  CAPS WRD ┃           ┃     7     ┃     8     ┃     9     ┃     0     ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃    TAB    ┃           ┃   ┃    ESC    ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -146,7 +146,7 @@ label= "Num"                               ;
 
                 &kp INS     &kp N1      &kp N2      &kp N3      &trans          &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &kp COLON
                 &kp DEL     &kp N4      &kp N5      &kp N6      &trans          &kp LARW    &kp DARW    &kp UARW    &kp RARW    &kp SEMI
-  &caps_word    &kp N7      &kp N8      &kp N9      &kp N0      &trans          &trans      &trans      &trans      &trans      &trans      &trans      
+  &caps_word    &trans      &kp N7      &kp N8      &kp N9      &kp N0          &trans      &trans      &trans      &trans      &trans      &trans      
                                         &trans      &trans      &trans          &kp ESC     &trans      &trans      
                         >;
                 };
