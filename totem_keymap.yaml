@@ -190,7 +190,5 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
 combos:
-- p: [0, 1]
-  k: ESC
 - p: [32, 33, 34, 35, 36, 37]
   k: {t: Game1, h: toggle}

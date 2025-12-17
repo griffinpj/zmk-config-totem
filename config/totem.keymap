@@ -78,12 +78,6 @@
 
      combos {
             compatible = "zmk,combos";
-            // ESC combo from top-left corner (Q + W)
-            combo_esc {
-                timeout-ms = <50>;
-                key-positions = <0 1>;
-                bindings = <&kp ESC>;
-            };
             // Toggle gaming layer by pressing ALL 6 thumb keys simultaneously
             // This prevents accidental gaming mode activation during normal typing
             // Key position layout (Totem 38-key):
