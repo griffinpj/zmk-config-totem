@@ -19,14 +19,16 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // Layer definitions
-#define BASE 0
-#define NUM  1
-#define SYM  2
-#define SYS  3
-#define GAME 4
-#define GSYM 5
+#define BASE 0  // Main typing layer with QWERTY + home row mods
+#define NUM  1  // Numbers, navigation, and function keys  
+#define SYM  2  // Symbols and special characters
+#define SYS  3  // System controls (bluetooth, reset, etc.)
+#define GAME 4  // Gaming layer without home row mods
+#define GSYM 5  // Gaming symbols layer
 
-// Home row mods macro  
+// Home row mods macros
+// Left hand: Shift/Alt/Ctrl/Gui on A/S/D/F
+// Right hand: Gui/Ctrl/Alt/Shift on J/K/L/'
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
@@ -76,22 +78,35 @@
 
      combos {
             compatible = "zmk,combos";
-            // ESC combo from top-left corner
+            // ESC combo from top-left corner (Q + W)
             combo_esc {
                 timeout-ms = <50>;
                 key-positions = <0 1>;
                 bindings = <&kp ESC>;
             };
-            // Toggle gaming layer with all thumb keys
+            // Toggle gaming layer by pressing ALL 6 thumb keys simultaneously
+            // This prevents accidental gaming mode activation during normal typing
+            // Key position layout (Totem 38-key):
+            //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+            //             ┃     0     ┃     1     ┃     2     ┃     3     ┃     4     ┃   ┃     5     ┃     6     ┃     7     ┃     8     ┃     9     ┃
+            //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+            //             ┃    10     ┃    11     ┃    12     ┃    13     ┃    14     ┃   ┃    15     ┃    16     ┃    17     ┃    18     ┃    19     ┃
+            // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+            // ┃    20     ┃    21     ┃    22     ┃    23     ┃    24     ┃    25     ┃   ┃    26     ┃    27     ┃    28     ┃    29     ┃    30     ┃    31     ┃
+            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+            //                                     ┃    32     ┃    33     ┃    34     ┃   ┃    35     ┃    36     ┃    37     ┃
+            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
             combo_gaming {
                 timeout-ms = <200>;
-                key-positions = <30 31 32 33 34 35>;
+                key-positions = <32 33 34 35 36 37>;  // All thumb keys: DEL BSPC ENTER SPACE TAB ESC
                 bindings = <&tog GAME>;
             };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
+        // Activate SYS layer when both NUM and SYM layers are held
+        // Provides access to system functions like bluetooth and reset
         tri_layer {
             if-layers = <NUM SYM>;
             then-layer = <SYS>;
@@ -106,6 +121,9 @@
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "Base"                              ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+// Main QWERTY layer with home row mods for efficient typing
+// Home row mods: A/S/D/F = Shift/Alt/Ctrl/Gui (left hand)
+//                J/K/L/' = Gui/Ctrl/Alt/Shift (right hand)
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃     Y     ┃     U     ┃     I     ┃     O     ┃     P     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
@@ -210,6 +228,12 @@ label= "Sys"                               ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "Game1"                             ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+// Gaming layer optimized for FPS/MMO games
+// - No home row mods to prevent accidental modifier activation
+// - WASD in standard position, Q moved for easy weapon switching  
+// - Numbers on right side for quick item/ability access
+// - F key easily accessible for interaction
+// - Tab for scoreboard/inventory, Space for jump, Enter for chat
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     Q     ┃     E     ┃     W     ┃     R     ┃     T     ┃   ┃     Y     ┃     1     ┃     2     ┃     3     ┃     P     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
@@ -236,6 +260,9 @@ label= "Game1"                             ;
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 label= "Game2"                             ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+// Gaming symbols layer - accessed via GSYM thumb key in gaming mode
+// Provides access to regular typing keys when in gaming mode
+// Right side maintains normal layout for occasional typing
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃           ┃           ┃           ┃           ┃           ┃   ┃     Y     ┃     U     ┃     I     ┃     O     ┃     P     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
