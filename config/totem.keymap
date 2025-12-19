@@ -237,7 +237,7 @@ label= "Game1"                             ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃GAME_MODS  ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃GAME_MODS  ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃  ▽ LALT   ┃   BSPC    ┃SYM+ENTER  ┃   ┃NUM+SPACE  ┃  FN+TAB   ┃  ▽ RALT   ┃
+//                                     ┃   SPACE   ┃   BSPC    ┃SYM+ENTER  ┃   ┃NUM+SPACE  ┃  FN+TAB   ┃  ▽ RALT   ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
@@ -245,7 +245,7 @@ label= "Game1"                             ;
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
                 &kp A       &kp S       &kp D       &kp F       &kp G           &kp H       &kp J       &kp K       &kp L       &kp SQT
  &mo GAME_MODS  &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &mo GAME_MODS        
-                                        &trans      &kp BSPC    &lt SYM ENTER   &lt NUM SPACE  &lt FN TAB   &trans    
+                                        &kp SPACE   &kp BSPC    &lt SYM ENTER   &lt NUM SPACE  &lt FN TAB   &trans    
                         >;
                 };
 

@@ -135,7 +135,7 @@ layers:
   - [Game Mods, Z, X, C, V, B, N, M, ',', .]
   - - /
     - Game Mods
-    - {t: ▽, type: trans}
+    - SPACE
     - BSPC
     - {t: ENTER, h: Sym}
     - {t: SPACE, h: Num}

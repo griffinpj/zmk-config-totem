@@ -950,9 +950,9 @@ path.combo {
 <tspan x="0" dy="-0.6em">Game</tspan><tspan x="0" dy="1.2em">Mods</tspan>
 </text>
 </a></g>
-<g transform="translate(255, 236)" class="key trans keypos-32">
-<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(255, 236)" class="key keypos-32">
+<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
+<text x="0" y="0" class="key tap">SPACE</text>
 </g>
 <g transform="translate(320, 245) rotate(15.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
