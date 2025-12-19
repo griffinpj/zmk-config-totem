@@ -12,15 +12,15 @@ layers:
     - {t: K, h: RCTRL}
     - {t: L, h: RALT}
     - {t: '''', h: RSHFT}
-  - [ESC, Z, X, C, V, B, N, M, ',', .]
+  - [LSHFT, Z, X, C, V, B, N, M, ',', .]
   - - /
-    - \
-    - DEL
+    - RSHFT
+    - LALT
     - BSPC
     - {t: ENTER, h: Sym}
     - {t: SPACE, h: Num}
     - {t: TAB, h: Fn}
-    - ESC
+    - RALT
   Num:
   - - INS
     - '1'
@@ -56,8 +56,8 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - {t: ▽, type: trans}
-    - {t: ESC, type: held}
+    - ENTER
+    - {type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
   Sym:
@@ -132,15 +132,15 @@ layers:
   Game1:
   - [Q, W, E, R, T, Y, U, I, O, P]
   - [A, S, D, F, G, H, J, K, L, '''']
-  - [LSHFT, Z, X, C, V, B, N, M, ',', .]
+  - [Game Mods, Z, X, C, V, B, N, M, ',', .]
   - - /
-    - RSHFT
-    - LCTRL
+    - Game Mods
+    - {t: ▽, type: trans}
     - BSPC
-    - ENTER
+    - {t: ENTER, h: Sym}
     - {t: SPACE, h: Num}
     - {t: TAB, h: Fn}
-    - LALT
+    - {t: ▽, type: trans}
   Fn:
   - - {t: ▽, type: trans}
     - F1
@@ -179,6 +179,45 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {type: held}
+    - {t: ▽, type: trans}
+  Game Mods:
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: A, h: LSHFT}
+    - {t: S, h: LALT}
+    - {t: D, h: LCTRL}
+    - {t: F, h: LGUI}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: J, h: RGUI}
+    - {t: K, h: RCTRL}
+    - {t: L, h: RALT}
+    - {t: '''', h: RSHFT}
+  - - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
     - {t: ▽, type: trans}
 combos:
 - p: [32, 33, 34, 35, 36, 37]

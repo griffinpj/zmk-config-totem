@@ -30,12 +30,13 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // Layer definitions
-#define BASE 0  // Main typing layer with QWERTY + home row mods
-#define NUM  1  // Numbers, navigation, and function keys  
-#define SYM  2  // Symbols and special characters
-#define SYS  3  // System controls (bluetooth, reset, etc.)
-#define GAME 4  // Gaming layer without home row mods
-#define FN   5  // Function keys layer (F1-F12)
+#define BASE      0  // Main typing layer with QWERTY + home row mods
+#define NUM       1  // Numbers, navigation, and function keys  
+#define SYM       2  // Symbols and special characters
+#define SYS       3  // System controls (bluetooth, reset, etc.)
+#define GAME      4  // Gaming layer without home row mods
+#define FN        5  // Function keys layer (F1-F12)
+#define GAME_MODS 6  // Gaming modifiers layer (home row mods for gaming)
 
 // Home row mods macros
 // Left hand: Shift/Alt/Ctrl/Gui on A/S/D/F
@@ -124,17 +125,17 @@ label= "Base"                              ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃  A/SHFT   ┃   S/ALT   ┃  D/CTRL   ┃   F/GUI   ┃     G     ┃   ┃     H     ┃   J/GUI   ┃  K/CTRL   ┃   L/ALT   ┃ '/SHFT    ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃    ESC    ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     \     ┃
+// ┃   SHIFT   ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃   SHIFT   ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃    DEL    ┃   BSPC    ┃SYM+ENTER  ┃   ┃NUM+SPACE  ┃  FN+TAB   ┃    ESC    ┃
+//                                     ┃   LALT    ┃   BSPC    ┃SYM+ENTER  ┃   ┃NUM+SPACE  ┃  FN+TAB   ┃   RALT    ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
               HRML(A,         S,          D,          F)        &kp G           &kp H     HRMR(J,         K,          L,        SQT) 
-    &kp ESC     &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp BSLH
-                                        &kp DEL     &kp BSPC    &lt SYM ENTER   &lt NUM SPACE  &lt FN TAB   &kp ESC
+    &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
+                                        &kp LALT    &kp BSPC    &lt SYM ENTER   &lt NUM SPACE  &lt FN TAB   &kp RALT
                         >;
                 };
 
@@ -152,7 +153,7 @@ label= "Num"                               ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃  CAPS WRD ┃           ┃     7     ┃     8     ┃     9     ┃     0     ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃    TAB    ┃           ┃   ┃    ESC    ┃           ┃           ┃
+//                                     ┃  ▽ LALT   ┃  ▽ BSPC   ┃   ENTER   ┃   ┃  ▽ HELD   ┃ ▽ FN+TAB  ┃  ▽ RALT   ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
@@ -160,7 +161,7 @@ label= "Num"                               ;
                 &kp INS     &kp N1      &kp N2      &kp N3      &trans          &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &kp COLON
                 &kp DEL     &kp N4      &kp N5      &kp N6      &trans          &kp LARW    &kp DARW    &kp UARW    &kp RARW    &kp SEMI
   &caps_word    &trans      &kp N7      &kp N8      &kp N9      &kp N0          &trans      &trans      &trans      &trans      &trans      &trans      
-                                        &trans      &trans      &trans          &kp ESC     &trans      &trans      
+                                        &trans      &trans      &kp ENTER       &trans      &trans      &trans      
                         >;
                 };
 
@@ -178,7 +179,7 @@ label= "Sym"                               ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃     &     ┃     _     ┃     +     ┃     |     ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃   ENTER   ┃           ┃   ┃           ┃           ┃           ┃
+//                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
@@ -226,25 +227,25 @@ label= "Game1"                             ;
 // Gaming layer with identical letter layout to base layer
 // - All letter keys in same positions as base layer for consistency
 // - No home row mods to prevent accidental activation during gameplay
-// - Shift keys on positions 20 and 31 for easy access with pinkies
+// - Positions 20/31 access GAME_MODS layer for home row modifiers when needed
 // - Direct Enter for chat, NUM layer for numbers, FN layer for function keys
-// - Direct Ctrl (pos 32) and Alt (pos 37) on thumbs for quick modifiers
+// - ALT keys pass through from base layer (pos 32/37) on thumbs for quick modifiers
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃     Y     ┃     U     ┃     I     ┃     O     ┃     P     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃     A     ┃     S     ┃     D     ┃     F     ┃     G     ┃   ┃     H     ┃     J     ┃     K     ┃     L     ┃     '     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃   SHIFT   ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃   SHIFT   ┃
+// ┃GAME_MODS  ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃     ,     ┃     .     ┃     /     ┃GAME_MODS  ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃   CTRL    ┃   BSPC    ┃   ENTER   ┃   ┃NUM+SPACE  ┃  FN+TAB   ┃    ALT    ┃
+//                                     ┃  ▽ LALT   ┃   BSPC    ┃SYM+ENTER  ┃   ┃NUM+SPACE  ┃  FN+TAB   ┃  ▽ RALT   ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
                 &kp A       &kp S       &kp D       &kp F       &kp G           &kp H       &kp J       &kp K       &kp L       &kp SQT
-    &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT        
-                                        &kp LCTRL   &kp BSPC    &kp ENTER       &lt NUM SPACE  &lt FN TAB   &kp LALT    
+ &mo GAME_MODS  &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &mo GAME_MODS        
+                                        &trans      &kp BSPC    &lt SYM ENTER   &lt NUM SPACE  &lt FN TAB   &trans    
                         >;
                 };
 
@@ -272,6 +273,34 @@ label= "Fn"                               ;
                 &trans      &kp F1      &kp F2      &kp F3      &kp F10         &trans      &trans      &trans      &trans      &trans
                 &trans      &kp F4      &kp F5      &kp F6      &kp F11         &trans      &trans      &trans      &trans      &trans
     &trans      &trans      &kp F7      &kp F8      &kp F9      &kp F12         &trans      &trans      &trans      &trans      &trans      &trans      
+                                        &trans      &trans      &trans          &trans      &trans      &trans      
+                        >;
+                };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+                game_mods_layer {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+label= "Game Mods"                         ;
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+// Gaming modifiers layer - accessed via SHIFT keys on gaming layer (positions 20/31)
+// Provides home row modifiers when needed during gaming
+// All positions transparent except home row which has identical mods to base layer
+//             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+//             ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃
+//             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+//             ┃  A/SHFT   ┃   S/ALT   ┃  D/CTRL   ┃   F/GUI   ┃           ┃   ┃           ┃   J/GUI   ┃  K/CTRL   ┃   L/ALT   ┃ '/SHFT    ┃
+// ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+// ┃           ┃           ┃           ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
+// ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+//                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
+//                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+ bindings = <
+// ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
+
+                &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans
+              HRML(A,         S,          D,          F)        &trans          &trans    HRMR(J,         K,          L,        SQT) 
+    &trans      &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans      &trans      
                                         &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
