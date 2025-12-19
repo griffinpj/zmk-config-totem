@@ -898,11 +898,8 @@ path.combo {
 </g>
 <g transform="translate(34, 209) rotate(-10.0)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
-<a href="#Game-Mods">
-<text x="0" y="0" class="key tap layer-activator">
-<tspan x="0" dy="-0.6em">Game</tspan><tspan x="0" dy="1.2em">Mods</tspan>
-</text>
-</a></g>
+<text x="0" y="0" class="key tap">LSHFT</text>
+</g>
 <g transform="translate(97, 223) rotate(-10.0)" class="key keypos-21">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key"/>
 <text x="0" y="0" class="key tap">Z</text>
@@ -1249,8 +1246,9 @@ path.combo {
 <text x="0" y="0" class="key tap">&#x27;</text>
 <text x="0" y="24" class="key hold">RSHFT</text>
 </g>
-<g transform="translate(34, 209) rotate(-10.0)" class="key held keypos-20">
-<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key held"/>
+<g transform="translate(34, 209) rotate(-10.0)" class="key trans keypos-20">
+<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
 </g>
 <g transform="translate(97, 223) rotate(-10.0)" class="key trans keypos-21">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key trans"/>
@@ -1292,9 +1290,8 @@ path.combo {
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(817, 209) rotate(10.0)" class="key trans keypos-31">
-<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(817, 209) rotate(10.0)" class="key held keypos-31">
+<rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key held"/>
 </g>
 <g transform="translate(255, 236)" class="key trans keypos-32">
 <rect rx="6" ry="6" x="-28" y="-26" width="55" height="52" class="key trans"/>
