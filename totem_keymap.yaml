@@ -56,7 +56,7 @@ layers:
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
-    - ENTER
+    - ESC
     - {type: held}
     - {t: ▽, type: trans}
     - {t: ▽, type: trans}
