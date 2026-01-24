@@ -92,7 +92,7 @@
             // This prevents accidental gaming mode activation during normal typing
             combo_gaming {
                 timeout-ms = <200>;
-                key-positions = <32 33 34 35 36 37>;  // All thumb keys: DEL BSPC ENTER SPACE TAB ESC
+                key-positions = <32 33 34 35 36 37>;  // All thumb keys: LALT BSPC SYM+ENTER NUM+SPACE FN+TAB RALT
                 bindings = <&tog GAME>;
             };
     };
@@ -129,11 +129,14 @@
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-
-                &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
-              HRML(A,         S,          D,          F)        &kp G           &kp H     HRMR(J,         K,          L,        SQT) 
-    &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
-                                        &kp LALT    &kp BSPC    &lt SYM ENTER   &lt NUM SPACE  &lt FN TAB   &kp RALT
+//   0           1           2           3           4               5           6           7           8           9
+    &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
+//   10          11          12          13          14              15          16          17          18          19
+  HRML(A,         S,          D,          F)        &kp G           &kp H     HRMR(J,         K,          L,        SQT) 
+//   20          21          22          23          24          25              26          27          28          29          30          31
+&kp LSHFT     &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
+//                          32          33          34              35          36          37
+                            &kp LALT    &kp BSPC    &lt SYM ENTER   &lt NUM SPACE  &lt FN TAB   &kp RALT
                         >;
                 };
 
@@ -155,11 +158,14 @@
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-
-                &kp INS     &kp N1      &kp N2      &kp N3      &trans          &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &kp COLON
-                &kp DEL     &kp N4      &kp N5      &kp N6      &trans          &kp LARW    &kp DARW    &kp UARW    &kp RARW    &kp SEMI
+//   0           1           2           3           4               5           6           7           8           9
+    &kp INS     &kp N1      &kp N2      &kp N3      &trans          &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &kp COLON
+//   10          11          12          13          14              15          16          17          18          19
+    &kp DEL     &kp N4      &kp N5      &kp N6      &trans          &kp LARW    &kp DARW    &kp UARW    &kp RARW    &kp SEMI
+//   20          21          22          23          24          25              26          27          28          29          30          31
   &caps_word    &trans      &kp N7      &kp N8      &kp N9      &kp N0          &trans      &trans      &trans      &trans      &trans      &trans      
-                                        &trans      &trans      &kp ESC       &trans      &trans      &trans      
+//                          32          33          34              35          36          37
+                            &trans      &trans      &kp ESC         &trans      &trans      &trans      
                         >;
                 };
 
@@ -181,11 +187,14 @@
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-
-                &trans      &kp LBKT    &kp LBRC    &kp RBRC    &trans          &kp CARET   &kp LPAR    &kp RPAR    &kp RBKT    &kp TILDE
-                &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp ASTRK   &kp MINUS   &kp EQUAL   &kp BSLH    &kp GRAVE
+//   0           1           2           3           4               5           6           7           8           9
+    &trans      &kp LBKT    &kp LBRC    &kp RBRC    &trans          &kp CARET   &kp LPAR    &kp RPAR    &kp RBKT    &kp TILDE
+//   10          11          12          13          14              15          16          17          18          19
+    &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT       &kp ASTRK   &kp MINUS   &kp EQUAL   &kp BSLH    &kp GRAVE
+//   20          21          22          23          24          25              26          27          28          29          30          31
     &trans      &trans      &trans      &trans      &trans      &trans          &kp AMPS    &kp UNDER   &kp PLUS    &kp PIPE    &trans      &trans      
-                                        &trans      &trans      &trans          &trans      &trans      &trans      
+//                          32          33          34              35          36          37
+                            &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
 
@@ -207,11 +216,14 @@
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-
-               &sys_reset   &trans      &trans      &trans     &bt BT_SEL 0   &bt BT_SEL 3  &trans      &trans      &trans     &sys_reset
-               &bootloader  &trans      &trans      &trans     &bt BT_SEL 1   &bt BT_SEL 4  &trans      &trans      &trans     &bootloader
-    &trans     &trans       &trans      &trans      &trans     &bt BT_SEL 2   &bt BT_CLR    &trans      &trans      &trans     &trans      &trans         
-                                        &trans      &trans     &trans         &trans        &trans      &trans      
+//   0           1           2           3           4               5           6           7           8           9
+   &sys_reset   &trans      &trans      &trans     &bt BT_SEL 0    &bt BT_SEL 3  &trans      &trans      &trans     &sys_reset
+//   10          11          12          13          14              15          16          17          18          19
+   &bootloader  &trans      &trans      &trans     &bt BT_SEL 1    &bt BT_SEL 4  &trans      &trans      &trans     &bootloader
+//   20          21          22          23          24          25              26          27          28          29          30          31
+    &trans     &trans       &trans      &trans      &trans     &bt BT_SEL 2    &bt BT_CLR    &trans      &trans      &trans     &trans      &trans         
+//                          32          33          34              35          36          37
+                            &trans      &trans     &trans          &trans        &trans      &trans      
                         >;
                 };
 
@@ -239,11 +251,14 @@
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-
-                &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
-                &kp A       &kp S       &kp D       &kp F       &kp G           &kp H       &kp J       &kp K       &kp L       &kp SQT
-    &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &mo GAME_MODS        
-                                        &kp SPACE   &kp BSPC    &lt SYM ENTER   &lt NUM SPACE  &lt FN TAB   &trans    
+//   0           1           2           3           4               5           6           7           8           9
+    &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
+//   10          11          12          13          14              15          16          17          18          19
+    &kp A       &kp S       &kp D       &kp F       &kp G           &kp H       &kp J       &kp K       &kp L       &kp SQT
+//   20          21          22          23          24          25              26          27          28          29          30          31
+&kp LSHFT     &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &mo GAME_MODS        
+//                          32          33          34              35          36          37
+                            &kp SPACE   &kp BSPC    &lt SYM ENTER   &lt NUM SPACE  &lt FN TAB   &trans    
                         >;
                 };
 
@@ -267,11 +282,14 @@
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-
-                &trans      &kp F1      &kp F2      &kp F3      &kp F10         &trans      &trans      &trans      &trans      &trans
-                &trans      &kp F4      &kp F5      &kp F6      &kp F11         &trans      &trans      &trans      &trans      &trans
+//   0           1           2           3           4               5           6           7           8           9
+    &trans      &kp F1      &kp F2      &kp F3      &kp F10         &trans      &trans      &trans      &trans      &trans
+//   10          11          12          13          14              15          16          17          18          19
+    &trans      &kp F4      &kp F5      &kp F6      &kp F11         &trans      &trans      &trans      &trans      &trans
+//   20          21          22          23          24          25              26          27          28          29          30          31
     &trans      &trans      &kp F7      &kp F8      &kp F9      &kp F12         &trans      &trans      &trans      &trans      &trans      &trans      
-                                        &trans      &trans      &trans          &trans      &trans      &trans      
+//                          32          33          34              35          36          37
+                            &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
 
@@ -295,11 +313,14 @@
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
-
-                &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans
-              HRML(A,         S,          D,          F)        &trans          &trans    HRMR(J,         K,          L,        SQT) 
+//   0           1           2           3           4               5           6           7           8           9
+    &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans
+//   10          11          12          13          14              15          16          17          18          19
+  HRML(A,         S,          D,          F)        &trans          &trans    HRMR(J,         K,          L,        SQT) 
+//   20          21          22          23          24          25              26          27          28          29          30          31
     &trans      &trans      &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans      &trans      &trans      
-                                        &trans      &trans      &trans          &trans      &trans      &trans      
+//                          32          33          34              35          36          37
+                            &trans      &trans      &trans          &trans      &trans      &trans      
                         >;
                 };
         };
