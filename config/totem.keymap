@@ -68,7 +68,6 @@
         // by performing a tap-release-hold sequence.
         qt: quick_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "QUICK_TAP";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
@@ -81,7 +80,6 @@
         // sometimes my device thinks a modifier is being held down
         // pressing all modifiers fixes it.
         unstick: unstick {
-            label = "ZM_unstick";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
@@ -115,7 +113,7 @@
 
                 base_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "Base"                              ;
+// Base Layer
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 // Main QWERTY layer with home row mods for efficient typing
 // Home row mods: A/S/D/F = Shift/Alt/Ctrl/Gui (left hand)
@@ -144,7 +142,7 @@ label= "Base"                              ;
 
                 num_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "Num"                               ;
+// Numbers Layer
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃   INSERT  ┃     1     ┃     2     ┃     3     ┃           ┃   ┃   HOME    ┃  PAGE DN  ┃  PAGE UP  ┃    END    ┃     :     ┃
@@ -170,7 +168,7 @@ label= "Num"                               ;
 
                 sym_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "Sym"                               ;
+// Symbols Layer
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃           ┃     [     ┃     {     ┃     }     ┃           ┃   ┃     ^     ┃     (     ┃     )     ┃     ]     ┃     ~     ┃
@@ -196,7 +194,7 @@ label= "Sym"                               ;
 
                 system_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "Sys"                               ;
+// System Layer
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃   RESET   ┃           ┃           ┃           ┃PROFILE 0  ┃   ┃PROFILE 3  ┃           ┃           ┃           ┃   RESET   ┃
@@ -222,7 +220,7 @@ label= "Sys"                               ;
 
                 gaming_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "Game1"                             ;
+// Gaming Layer
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 // Gaming layer with identical letter layout to base layer
 // - All letter keys in same positions as base layer for consistency
@@ -253,7 +251,7 @@ label= "Game1"                             ;
 
                 fn_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "Fn"                               ;
+// Function Keys Layer
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 // Function keys layer - accessed via TAB key hold (position 36)
 // F1-F9 arranged in same positions as NUM layer numbers 1-9
@@ -281,7 +279,7 @@ label= "Fn"                               ;
 
                 game_mods_layer {
 // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-label= "Game Mods"                         ;
+// Game Modifiers Layer
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 // Gaming modifiers layer - accessed via SHIFT keys on gaming layer (positions 20/31)
 // Provides home row modifiers when needed during gaming
